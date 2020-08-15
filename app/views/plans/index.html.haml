@@ -5,9 +5,16 @@
     %ul.menu_left
       %li= link_to 'Concepy', class: "menu_w"
       %li= link_to 'Servise', class: "menu_s"
-      %li= link_to 'log in', class: "login"
-      %li= link_to 'sign in', class: "signin"
+    - if user_signed_in?
+      %ul.menu_left
+        %li= link_to current_user.name, "#", class: "logout"
+        %li= link_to 'log out', "/users/sign_out", method: :delete, class: "logout"
+    - else
+      %ul.menu_left
+        %li= link_to 'log in', "/users/sign_in", class: "login"
+        %li= link_to 'sign up', "/users/sign_up", class: "signup"
 .main
+  .main_image
 .main2
   .main2_box
     .main2_title
