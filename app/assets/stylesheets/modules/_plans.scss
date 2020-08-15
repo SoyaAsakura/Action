@@ -36,6 +36,18 @@
   height: 100vh;
   background-image: url(https://cdn.pixabay.com/photo/2016/11/08/05/20/adventure-1807524_1280.jpg);
   background-size: contain;
+  position: relative;
+}
+.main_message {
+  position: absolute;
+  width: 70vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 17px;
 }
 
 .main2 {
