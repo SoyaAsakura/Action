@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_054920) do
     t.string "mission", null: false
     t.integer "time", null: false
     t.integer "date", null: false
+    t.integer "restriction", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

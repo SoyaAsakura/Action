@@ -1,0 +1,25 @@
+.header
+  .logo
+    = link_to image_tag("logo1.png", class: "logo1"), "/"
+.action_main
+  %h2.action_info ActionPlanの作成
+  = form_with model: @plan, lacal: true do |f|
+    .new_action
+      .weight-bold-text
+        ActionTitle
+      = f.text_area :title, class:"action-title", placeholder:"ActionTitle"
+      .weight-bold-text      
+        日付
+      = f.date_select :date, class:"date"
+      .weight-bold-text
+        Mision
+      = f.text_area :mission, class:"mission", placeholder:"mission"
+      .weight-bold-text
+        制限時間
+      = f.collection_select(:hoge, [], :hoge, :hoge, {}, {class:"select-box"})
+      .weight-bold-text
+        Restriction
+      = f.text_field :restriction, class:"restriction", placeholder:"募金金額"
+    .btn-contents
+      = f.submit "Create" ,class:"create-btn"
+      = link_to 'もどる', root_path, class: "back-btn"

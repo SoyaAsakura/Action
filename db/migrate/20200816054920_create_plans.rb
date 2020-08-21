@@ -6,6 +6,7 @@ class CreatePlans < ActiveRecord::Migration[6.0]
       t.string :mission,            null: false
       t.integer :time,              null: false
       t.integer :date,              null: false
+      t.integer :restriction,       null: false
       t.timestamps
     end
   end
