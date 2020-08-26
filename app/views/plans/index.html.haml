@@ -34,7 +34,9 @@
       Action
     .main3_info
       
-.main4
-  =link_to 'Create Action', "/plans/new", method: :get, class: "main4_box"
+.create-btn
+  %span.create-btn-text Create Action
+  =link_to "/plans/new" do
+    = image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon"
 
 .footer
