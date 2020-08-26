@@ -1,0 +1,26 @@
+.wrapper
+  .header
+    .logo
+      = link_to image_tag("logo1.png", class: "logo1"), "/"
+  .action_main
+    %h2.action_info ActionPlanの作成
+    = form_with model: @plan, local: true do |f|
+      .new_action
+        .weight-bold-text
+          ActionTitle
+        = f.text_area :title, class:"action-title", placeholder:"ActionTitle"
+        .weight-bold-text
+          判定者Email
+        = f.text_field :email, class:"email"
+        .weight-bold-text
+          日にち
+        = f.date_field :date, class:"date"
+        .weight-bold-text
+          制限時間
+        = f.collection_select(:limit_id, Limit.all, :id, :name, {prompt: "---"}, {class:"select-box"})
+        .weight-bold-text
+          Restriction
+        = f.text_field :restriction, class:"restriction", placeholder:"罰金金額"
+      .btn-contents
+        = f.submit "Create" ,class:"create-btn"
+        = link_to 'もどる', root_path, class: "back-btn"

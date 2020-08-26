@@ -4,7 +4,7 @@
   .menu
     %ul.menu_left
       %li= link_to 'Concepy', class: "menu_w"
-      %li= link_to 'Servise', class: "menu_s"
+      %li= link_to 'Action', class: "menu_s"
     - if user_signed_in?
       %ul.menu_left
         %li= link_to current_user.name, "#", class: "logout"
@@ -31,10 +31,10 @@
 .main3
   .main3_box
     .main3_title
-      Servise
+      Action
     .main3_info
       
 .main4
-  =link_to 'Create Action', "/", method: :get, class: "main4_box"
+  =link_to 'Create Action', "/plans/new", method: :get, class: "main4_box"
 
 .footer
