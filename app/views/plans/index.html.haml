@@ -4,7 +4,7 @@
   .menu
     %ul.menu_left
       %li= link_to 'Concepy', class: "menu_w"
-      %li= link_to 'Action', class: "menu_s"
+      %li= link_to 'CreateAction', "/plans/new", class: "menu_s"
     - if user_signed_in?
       %ul.menu_left
         %li= link_to current_user.name, "#", class: "logout"
@@ -13,6 +13,7 @@
       %ul.menu_left
         %li= link_to 'log in', "/users/sign_in", class: "login"
         %li= link_to 'sign up', "/users/sign_up", class: "signup"
+.mian-field
 .main
   .main_image
     %ul.main_message
@@ -32,11 +33,18 @@
   .main3_box
     .main3_title
       Action
-    .main3_info
-      
-.create-btn
-  %span.create-btn-text Create Action
-  =link_to "/plans/new" do
-    = image_tag 'camera.png' , size: '185x50' ,class: "purchase-btn-icon"
-
+    - @plans.each do |plan|
+      .main3_info
+        %ul.plan-info
+          %li.plan-date
+            = plan.date
+          %li.plan-title
+            = plan.title
+          %li.plan-restriction
+            罰金金額：
+            = plan.restriction
+            円
+          %li.plan-limit
+            制限時間：
+            = Limit.find(plan.limit_id).name
 .footer

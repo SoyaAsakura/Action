@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_054920) do
     t.text "title", null: false
     t.string "email", default: "", null: false
     t.integer "limit_id", null: false
-    t.integer "date", null: false
+    t.date "date", null: false
     t.integer "restriction", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
