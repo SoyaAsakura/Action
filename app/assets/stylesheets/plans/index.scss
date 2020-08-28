@@ -49,8 +49,8 @@
 .main_message {
   position: absolute;
   width: 70vw;
-  top: 40%;
-  left: 50%;
+  top: 85%;
+  left: 50vw;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -91,8 +91,8 @@
 
 .main3 {
   margin: auto;
-  width: 675px;
-  height: 100vh;
+  width: 800px;
+  height: 500px;
   background-color: #EEEEEE;
   position: relative;
 }
@@ -100,7 +100,7 @@
 .main3_box {
   margin: auto;
   width: 90%;
-  height: 86%;
+  height: 80%;
   background-color: white;
   position: absolute;
   top: 50%;
@@ -122,12 +122,13 @@
 .main3_info {
   height: 320px;
   background-image: url("main1.JPG");
-  background-size: 610px 330px;
+  background-size: 660px 330px;
   margin: 30px;
 }
 
 .plan-info {
   color: white;
+  position: relative;
 }
 
 .plan-title {
@@ -137,23 +138,35 @@
 }
 
 .plan-date {
-  text-align: right;
-  padding-right: 15px;
+  text-align: left;
+  padding-left: 15px;
 }
 
 .plan-restriction {
   text-align: center;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .plan-limit {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 10px;
+}
+
+.plan-nickname {
+  text-align: right;
+  padding-right: 15px;
+  font-size: 20px;
+}
+
+.show-image {
+  padding-right: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .footer {
-  width: 100vw;
+  width: 100%;
   height: 60px;
   background-color: #333333;
 }
-

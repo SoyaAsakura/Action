@@ -16,6 +16,10 @@ class PlansController < ApplicationController
     end
   end
 
+  def show
+    @plan = Plan.find(params[:id])
+  end
+
   private
   def plan_params
     params.require(:plan).permit(:title, :date, :limit_id, :restriction).merge(user_id: current_user.id)

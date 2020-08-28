@@ -7,7 +7,7 @@
       %li= link_to 'CreateAction', "/plans/new", class: "menu_s"
     - if user_signed_in?
       %ul.menu_left
-        %li= link_to current_user.name, "#", class: "logout"
+        %li= link_to current_user.name, "/users/#{current_user.id}", class: "logout"
         %li= link_to 'log out', "/users/sign_out", method: :delete, class: "logout"
     - else
       %ul.menu_left
@@ -30,21 +30,25 @@
     .mian2_info
       人間は皆弱い、成功する条件の第一歩は自分に勝つこと。しかし、それが一番難しく一番大切なことである。だがしかし、それがわかっていても自分に勝てる人間はごくわずか、このサイトは、やるべきことや、やりたいことがあるが、一人では行動できずその戦いに勝てない人たちに向けた、自ら制限を決め、やらざる終えないという状況にし、成功の第一歩を踏み出す手助けをするためのサイトである。実際にこのサイトの製作者である私も一人では難しい道のりを、仲間と協力し、縛り合い、勝利を掴んできた。勝利の前には必ず苦しい道が待っている。だがその勝負に勝った時初めて、挑戦したこと、努力した事に対する喜びが待っているだろう。共に進もう！明るいみらいへ
 .main3
-  .main3_box
-    .main3_title
-      Action
-    - @plans.each do |plan|
-      .main3_info
-        %ul.plan-info
-          %li.plan-date
-            = plan.date
-          %li.plan-title
-            = plan.title
-          %li.plan-restriction
-            罰金金額：
-            = plan.restriction
-            円
-          %li.plan-limit
-            制限時間：
-            = Limit.find(plan.limit_id).name
+  .main3_title
+    Action
+    .main3_box
+      - @plans.each do |plan|
+        .main3_info
+          %ul.plan-info
+            %li.plan-date
+              = plan.date
+            %li.plan-title
+              = plan.title
+            %li.plan-restriction
+              罰金金額：
+              = plan.restriction
+              円
+            %li.plan-limit
+              制限時間：
+              = Limit.find(plan.limit_id).name
+            %li.plan-nickname
+              = current_user.name
+            %li.show-image
+              = link_to image_tag("arrow_top.png", class: "edit-image"), plan_path(plan.id)
 .footer
