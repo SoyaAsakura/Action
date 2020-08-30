@@ -50,5 +50,5 @@
             %li.plan-nickname
               = current_user.name
             %li.show-image
-              = link_to image_tag("arrow_top.png", class: "edit-image"), plan_path(plan.id)
+              = link_to image_tag("arrow_top.png", class: "edit-image"), plan_path(plan.id), method: :get
 .footer

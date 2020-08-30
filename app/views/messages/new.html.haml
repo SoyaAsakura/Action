@@ -1,0 +1,6 @@
+= form_with model: @message do |f|
+  = f.text_field :text
+  = f.submit '送信'
+%div{:id => "messages"}
+  - @messages.reverse_each do |message|
+    %p= message.text

@@ -18,6 +18,7 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
+    @messages = Message.all
   end
 
   private
