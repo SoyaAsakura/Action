@@ -119,3 +119,33 @@
     font-size: 13px;
   }
 }
+
+.UserProfile {
+  padding: 15px;
+}
+.UserName {
+  font-size: 35px;
+  padding-bottom: 15px;
+}
+
+.profile-box {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 15px;
+}
+
+.profile-title {
+  font-size: 20px;
+}
+
+.profile-catalog {
+  padding-top: 10px;
+}
+
+.UserStatus {
+  font-size: 20px;
+}
+
+.current-action {
+  padding-top: 10px;
+}

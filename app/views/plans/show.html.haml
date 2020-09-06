@@ -34,19 +34,22 @@
 -#           コメントする
 -#           %span
 
--# .item-show
--#   .comment-box
--#     = form_with model: @message do |f|
--#       = f.text_field :text, class: "comment-text"
--#       %p.comment-warn
--#         応援メッセージを送ろう！
--#         %br/
--#         アドバイスをして目標達成に貢献しよう!
--#       = f.submit "コメントする", class: "comment-btn"
--#         = image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"
--#         %span
--#           コメントする
--#           %span
+.item-show
+  .challenge
+    = link_to "挑戦する", "#"
+  .comment-box
+    = form_with model: @message do |f|
+      = f.text_field :text, class: "comment-text"
+      %p.comment-warn
+        応援メッセージを送ろう！
+        %br/
+        アドバイスをして目標達成に貢献しよう!
+      -# = f.submit "コメントする", class: "comment-btn"
+        = image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"
+        %span
+          コメントする
+          %span
+
 
 
 -# .item-show

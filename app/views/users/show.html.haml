@@ -1,3 +1,28 @@
 .header
   .logo
     = link_to image_tag("logo1.png", class: "logo1"), "/"
+
+.UserProfile
+  .UserName
+    = current_user.name
+  .profile-box
+    .profile-title
+      Profile
+      .profile-catalog
+      = form_with model: @user, local: true do |f|
+        %ul
+          %li.goal
+            目標：プログラミングマスター
+          %li.profession
+            職業：プログラマー
+    .profile-edit
+      = link_to "edit", "#"
+  .UserStatus
+    UserStatus
+    %ul.action-catalog
+      %li.current-action
+        進行中のAction
+      %li.previous-action
+        過去のAction
+  
+

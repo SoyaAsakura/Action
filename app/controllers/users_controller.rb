@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      ConfirmationMailer.send_confirm_to_user(@user).deliver
       redirect_to root_path
     else
       render :new
